@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Employee Management</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="email_address">Email Address</string>
+    <string name="enter_your_credentials_to_login">Enter your credentials to login</string>
+    <string name="login">Login</string>
+    <string name="enter_password">Enter password</string>
+    <string name="title_activity_bottom_nav">BottomNavActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="my_employees">My Employees</string>
+    <string name="my_profile">My Profile</string>
+    <string name="back">Back</string>
+    <string name="add_new_employee">Add New Employee</string>
+    <string name="employee_name">Employee Name</string>
+    <string name="enter_employee_name">Enter Employee Name</string>
+    <string name="department">Department</string>
+    <string name="choose_department">Choose Department</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="enter_contact_number">Enter Contact Number</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="blood_group">Blood Group</string>
+    <string name="enter_blood_group">Enter Blood Group</string>
+    <string name="address">Address</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="add_employee">Add Employee</string>
+    <string name="logout">Logout</string>
+    <string name="mail">Mail</string>
+    <string name="call">Call</string>
+</resources>

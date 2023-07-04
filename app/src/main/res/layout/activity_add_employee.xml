@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F6F8"
+    tools:context=".ui.main.activity.AddEmployeeActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-4dp"
+        android:layout_marginBottom="-8dp"
+        android:indeterminate="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/backButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/regular"
+                android:paddingEnd="15dp"
+                android:text="@string/back"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                app:icon="@drawable/back"
+                app:rippleColor="@android:color/transparent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/semibold"
+                android:text="@string/add_new_employee"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:clipToPadding="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+            <ImageView
+                android:id="@+id/employeeImage"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:src="@drawable/upload_image" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/semibold"
+                android:text="@string/employee_name"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/employeeName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_outline"
+                android:fontFamily="@font/regular"
+                android:hint="@string/enter_employee_name"
+                android:maxLength="25"
+                android:maxLines="1"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/semibold"
+                android:text="@string/department"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/departmentSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@null"
+                    android:overScrollMode="never" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/chooseDepartment"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edittext_outline"
+                    android:drawableEnd="@drawable/down"
+                    android:fontFamily="@font/regular"
+                    android:gravity="center_vertical"
+                    android:hint="@string/choose_department"
+                    android:maxLines="1"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/semibold"
+                android:text="@string/email_address"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/emailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_outline"
+                android:fontFamily="@font/regular"
+                android:hint="@string/enter_email_address"
+                android:inputType="textEmailAddress"
+                android:maxLength="25"
+                android:maxLines="1"
+                android:imeOptions="actionNext"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/semibold"
+                android:text="@string/contact_number"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/contactNumber"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_outline"
+                android:fontFamily="@font/regular"
+                android:hint="@string/enter_contact_number"
+                android:inputType="phone|number"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:paddingStart="10dp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/semibold"
+                android:text="@string/date_of_birth"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/dateOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_outline"
+                android:drawableEnd="@drawable/calender"
+                android:fontFamily="@font/regular"
+                android:gravity="center_vertical"
+                android:hint="@string/date_of_birth"
+                android:maxLines="1"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/semibold"
+                android:text="@string/blood_group"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/bloodGroup"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_outline"
+                android:fontFamily="@font/regular"
+                android:hint="@string/enter_blood_group"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:paddingStart="10dp"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/semibold"
+                android:text="@string/address"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_outline"
+                android:fontFamily="@font/regular"
+                android:gravity="top|start"
+                android:hint="@string/enter_address"
+                android:lines="4"
+                android:maxLines="4"
+                android:minLines="4"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addEmployee"
+                style="@style/ThemeOverlay.Material3.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="#4079E5"
+                android:fontFamily="@font/bold"
+                android:stateListAnimator="@null"
+                android:text="@string/add_employee"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/passwordEdittext"
+                app:layout_constraintStart_toStartOf="@+id/passwordEdittext"
+                app:layout_constraintTop_toBottomOf="@+id/passwordEdittext" />
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

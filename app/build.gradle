@@ -1,0 +1,91 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    namespace 'com.nextgenapp.nextgentech'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.nextgenapp.nextgentech"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    //API_URL - hard code the base url
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_URL", "\"http://18.218.209.28:8000/api/\""
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_URL", "\"http://18.218.209.28:8000/api/\""
+        }
+    }
+
+    flavorDimensions "version"
+
+    productFlavors {
+        create("stage") {
+            dimension = "version"
+            applicationIdSuffix = ".stage"
+            versionNameSuffix = "-stage"
+        }
+        create("production") {
+            dimension = "version"
+            applicationIdSuffix = ".production"
+            versionNameSuffix = "-production"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation "androidx.core:core-ktx:$coreKtx"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "com.google.android.material:material:$material"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
+
+    //ktx - kotlin extension | jetpack
+    implementation "androidx.activity:activity-ktx:$activity_ktx"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
+
+    //glide - image processing library
+    implementation "com.github.bumptech.glide:glide:$glide"
+
+    //retrofit - http client
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+
+    //junit - unit testing
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:$extJunit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
+}
